@@ -18,6 +18,13 @@ struct ContentView: View {
                     }
                 }
             }
+            List {
+                ForEach(1 ... 10, id: \.self) { index in
+                    NavigationLink(destination: Text("\(index)").frame(maxWidth: .infinity, maxHeight: .infinity)) {
+                        Text("Link \(index)")
+                    }
+                }
+            }
         }.listStyle(SidebarListStyle()).frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
